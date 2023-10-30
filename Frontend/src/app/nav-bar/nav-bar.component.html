@@ -1,0 +1,25 @@
+<nav class="nav-bar">
+  <div class="nav-bar-left">
+    <div class="left-links">
+      <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>Home</a>
+      <div class="dropdown">
+        <button class="drop-btn">Play</button>
+        <div class="dropdown-links">
+          <a routerLink="/rps-game" routerLinkActive="active">Rock Paper Scissors</a>
+          <a routerLink="/ttt-game" routerLinkActive="active">Tic Tac Toe</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-bar-right">
+    <div class="right-links">
+      <a *ngIf="!loggedIn()" routerLink="user/register" routerLinkActive="active">Register</a>
+      <a *ngIf="!loggedIn()" routerLink="user/login" routerLinkActive="active">Login</a>
+      <a *ngIf="loggedIn()" (click)="onLogout()">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<div class="footer">
+  <div>This is the footer. Some info goes here.</div>
+</div>

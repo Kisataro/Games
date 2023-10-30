@@ -1,0 +1,27 @@
+<div class="gamefield container-fluid">
+  <mat-grid-list cols="3" rowHeight="1:1">
+    <mat-grid-tile
+        *ngFor="let tile of tiles, let i = index"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color"
+        (click)="playerMove(i)">
+      {{tile.text}}
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div class="score-box">
+  <div class="score">Current Score<br>
+    Your score: {{playerScore}}<br>
+    Computer's score: {{computerScore}}
+  </div>
+  <div class="score">Overall Score<br>
+    Your score: {{playerOverallScore}}<br>
+    Computer's score: {{computerOverallScore}}
+  </div>
+</div>
+
+<div *ngIf="isPlayerWinner || isComputerWinner || isTie">
+  <button class="new-game-button" (click)="startNewGame()">New Game</button>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="header">Login</div>
+  <div class="body">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+      <div class="input-field">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control"
+        formControlName="username"
+        [placeholder]="usernamePlaceholder">
+      </div>
+
+      <div class="input-field">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control"
+        formControlName="password"
+        [placeholder]="passwordPlaceholder">
+      </div>
+
+      <div class="buttons">
+        <button type="submit" class="save-button" [disabled]="!loginForm.valid">Login</button>
+        <button type="reset" class="cancel-button" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

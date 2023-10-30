@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="header">Registration</div>
+  <div class="body">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+      <div class="input-field">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control"
+         formControlName="username"
+         [placeholder]="usernamePlaceholder">
+         <span *ngIf="!username.valid && username.touched" class="error-block">
+          <span *ngIf="username.hasError('required')">
+            Please enter a username.
+          </span>
+          <span *ngIf="username.hasError('maxlength')">
+            Username must contain max. 15 characters.
+          </span>
+         </span>
+      </div>
+
+      <div class="input-field">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control"
+        formControlName="email"
+        [placeholder]="emailPlaceholder">
+        <span *ngIf="!email.valid && email.touched" class="error-block">
+          <span *ngIf="email.hasError('required')">
+          Please enter your email.
+        </span>
+        <span *ngIf="email.hasError('email')">
+          Email is not valid.
+        </span>
+      </span>
+      </div>
+
+      <div class="input-field">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control"
+        formControlName="password"
+        [placeholder]="passwordPlaceholder">
+        <span *ngIf="!password.valid && password.touched" class="error-block">
+          <span *ngIf="password.hasError('required')">
+            Please enter a password.
+          </span>
+          <span *ngIf="password.hasError('minlength')">
+            Password must contain min. 5 characters.
+          </span>
+        </span>
+      </div>
+
+      <div class="input-field">
+        <label for="confirm-password" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control"
+        formControlName="confirmPassword"
+        [placeholder]="passwordPlaceholder">
+        <span *ngIf="!confirmPassword.valid && confirmPassword.touched" class="error-block">
+          <span *ngIf="confirmPassword.hasError('required')">
+            Please confirm your password.
+          </span>
+        </span>
+          <span *ngIf="registrationForm.hasError('notmatched') && confirmPassword.valid" class="error-block">
+            Your passwords do not match.
+          </span>
+      </div>
+
+      <div class="buttons">
+        <button type="submit" class="save-button" [disabled]="!registrationForm.valid" (click)="onSubmit()">Register</button>
+        <button type="reset" class="cancel-button" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

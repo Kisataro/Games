@@ -1,0 +1,36 @@
+.middle {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px 20px 0px;
+  border-radius: 25px;
+  flex-direction: column;
+}
+
+.game-pics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 15px;
+}
+
+.game-pics img {
+  border: 2px solid black;
+  border-radius: 25px;
+}
+
+.welcome-text {
+  margin: 80px 0;
+  font-size: 3em;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 1.5;
+}
+
+img:active {
+  transform: translateY(4px);
+}

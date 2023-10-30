@@ -1,0 +1,24 @@
+<div class="text">Make your choice:</div>
+<div class="buttons-to-click">
+  <button class="rock-image" (click)="clickedRock()">
+      <img class="btn-images" src="assets/images/rock.png">
+  </button>
+  <button class="paper-image" (click)="clickedPaper()">
+      <img class="btn-images" src="assets/images/paper.png">
+  </button>
+  <button class="scissors-image" (click)="clickedScissors()">
+      <img class="btn-images" src="assets/images/scissors.png">
+  </button>
+</div>
+
+<div class="score-box">
+  <div class="score">Current Score<br>
+    Your score: {{playerScore}}<br>
+    Computer's score: {{computerScore}}
+  </div>
+  <div class="score">Overall Score<br>
+    Your score: {{playerOverallScore}}<br>
+    Computer's score: {{computerOverallScore}}
+  </div>
+</div>
+

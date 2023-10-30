@@ -1,0 +1,53 @@
+.text {
+  display: flex;
+  justify-content: center;
+  margin-top: 90px;
+  color: white;
+  font-size: 2em;
+}
+
+.buttons-to-click {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  gap: 50px;
+  margin: 10px 20px;
+}
+
+.btn-images {
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  width: 150px;
+}
+
+button,
+img {
+  border-radius: 25px;
+}
+
+img:active {
+  transform: translateY(4px);
+}
+
+/* Use this for the tic-tac-toe scorebox as well */
+
+.score-box {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  min-width: 270px;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 25px;
+  background-color: rgba(0,0,0,.5);
+}

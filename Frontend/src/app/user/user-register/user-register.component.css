@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid green;
+  border-radius: 25px;
+  margin-top: 50px;
+  width: 400px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+  border-bottom: 3px solid green;
+  border-radius: 25px;
+  width: 400px;
+  padding: 10px;
+  background-color: green;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.form-label {
+  margin-top: 20px;
+  width: 300px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+
+}
+
+button {
+  border: 2px solid green;
+  border-radius: 25px;
+  background-color: green;
+  color: white;
+  height: 50px;
+  width: 100px;
+}
+
+button:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
+}
+
+.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.error-block {
+  color: red;
+}
+
+button:disabled {
+  background-color: grey;
+  border-color: grey;
+}
