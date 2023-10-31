@@ -19,21 +19,6 @@
       </div>
 
       <div class="input-field">
-        <label for="email" class="form-label">Email</label>
-        <input type="text" class="form-control"
-        formControlName="email"
-        [placeholder]="emailPlaceholder">
-        <span *ngIf="!email.valid && email.touched" class="error-block">
-          <span *ngIf="email.hasError('required')">
-          Please enter your email.
-        </span>
-        <span *ngIf="email.hasError('email')">
-          Email is not valid.
-        </span>
-      </span>
-      </div>
-
-      <div class="input-field">
         <label for="password" class="form-label">Password</label>
         <input type="password" class="form-control"
         formControlName="password"

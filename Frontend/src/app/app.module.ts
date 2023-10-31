@@ -14,10 +14,13 @@ import { UserRegisterComponent } from './user/user-register/user-register.compon
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomePageComponent,
     NavBarComponent,
     RpsGameComponent,
     TttGameComponent,
@@ -27,9 +30,11 @@ import { AuthService } from './services/auth.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     MatGridListModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: '', component: HomePageComponent},
       {path: 'home', component: HomePageComponent},

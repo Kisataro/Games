@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\David\\angular projects\\Games\\API\\api.csproj": {}
+    "C:\\Users\\David\\angular projects\\Games\\api\\api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\David\\angular projects\\Games\\API\\api.csproj": {
+    "C:\\Users\\David\\angular projects\\Games\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\David\\angular projects\\Games\\API\\api.csproj",
+        "projectUniqueName": "C:\\Users\\David\\angular projects\\Games\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "C:\\Users\\David\\angular projects\\Games\\API\\api.csproj",
+        "projectPath": "C:\\Users\\David\\angular projects\\Games\\api\\api.csproj",
         "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\David\\angular projects\\Games\\API\\obj\\",
+        "outputPath": "C:\\Users\\David\\angular projects\\Games\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\David\\AppData\\Roaming\\NuGet\\NuGet.Config",

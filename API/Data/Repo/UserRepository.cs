@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using API.Interfaces;
 using API.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration.UserSecrets;
 
 namespace API.Data.Repo
 {
@@ -16,8 +17,8 @@ namespace API.Data.Repo
         public UserRepository(DataContext dc)
         {
             this.dc = dc;
-            
         }
+
         public async Task<User> Authenticate(string Username, string passwordText)
         {
             var user = await dc.Users.FirstOrDefaultAsync(x => x.Username == Username);

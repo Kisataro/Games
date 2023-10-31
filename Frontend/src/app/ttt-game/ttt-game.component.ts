@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import * as alertifyjs from 'alertifyjs';
 
 export interface Tile {
@@ -18,8 +19,7 @@ export class TttGameComponent {
   playerScore: number = 0;
   computerScore: number = 0;
 
-  playerOverallScore: number = 0;
-  computerOverallScore: number = 0;
+  constructor(private http: HttpClient) {}
 
   isPlayerTurn: boolean = true;
   isComputerTurn: boolean = false;
@@ -94,13 +94,11 @@ export class TttGameComponent {
       if (this.isPlayerWinner) {
         alertifyjs.success("You won! Yay!")
         this.playerScore = ++this.playerScore;
-        this.playerOverallScore = ++this.playerOverallScore;
       }
 
       if (this.isComputerWinner) {
         alertifyjs.error("You lost! :(")
         this.computerScore = ++this.computerScore;
-        this.computerOverallScore = ++this.computerOverallScore
       }
     }
   }
@@ -113,6 +111,7 @@ export class TttGameComponent {
     this.tracker = new Array(9).fill(null);
     this.tiles.forEach(tile => {
     tile.text = '';
-  });
+    });
   }
+
 }

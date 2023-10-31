@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using API.Data;
 using API.Dtos;
 using API.Interfaces;
 using API.Models;
@@ -25,6 +26,18 @@ namespace API.Controllers
             
         }
 
+        [HttpPost("register")]
+        public async Task<IActionResult> Register(RegisterReqDto registerReq) 
+        {
+            if (await uow.UserRepository.UserAlreadyExists(registerReq.Username)) {
+                return BadRequest("User already exists.");
+            }
+
+            uow.UserRepository.Register(registerReq.Username, registerReq.Password);
+            await uow.SaveAsync();
+            return StatusCode(201);
+        }
+
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginReqDto loginReq) 
         {
@@ -39,19 +52,7 @@ namespace API.Controllers
             loginRes.Token = CreateJWT(user);
             return Ok(loginRes);
         }
-
-        [HttpPost("register")]
-        public async Task<IActionResult> Register(LoginReqDto loginReq) 
-        {
-            if (await uow.UserRepository.UserAlreadyExists(loginReq.Username)) {
-                return BadRequest("User already exists.");
-            }
-
-            uow.UserRepository.Register(loginReq.Username, loginReq.Password);
-            await uow.SaveAsync();
-            return StatusCode(201);
-        }
-
+        
         private string CreateJWT(User user) 
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is my custom Secret key for authentication"));

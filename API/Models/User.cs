@@ -14,9 +14,5 @@ namespace API.Models
         [Required]
         public byte[] Password { get; set; }
         public byte[] PasswordKey { get; set; }
-        public int PlayerRpsOverallScore { get; set; }
-        public int ComputerRpsOverallScore { get; set; }
-        public int PlayerTttOverallScore { get; set; }
-        public int ComputerTttOverallScore { get; set; }
     }
 }

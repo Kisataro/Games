@@ -3,6 +3,7 @@ import { FormControl, FormGroup, MaxValidator, Validators } from '@angular/forms
 import { AuthService } from 'src/app/services/auth.service';
 import * as alertifyjs from 'alertifyjs';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-user-login',
@@ -11,7 +12,15 @@ import { Router } from '@angular/router';
 })
 export class UserLoginComponent {
 
-  constructor(private authService: AuthService, private router: Router) {}
+  username: string = '';
+  private subscription: Subscription;
+
+  constructor(private authService: AuthService, private router: Router) {
+
+    this.subscription = this.authService.username$.subscribe(username => {
+      this.username = username;
+    });
+  }
 
   loginForm!: FormGroup;
   usernamePlaceholder: string = "Enter your username";
@@ -24,16 +33,23 @@ export class UserLoginComponent {
     })
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
   onLogin(): void {
-    console.log(this.loginForm.value)
-    const token = this.authService.authUser(this.loginForm.value);
-    if (token) {
-      localStorage.setItem('token', token.username)
-      alertifyjs.success("Login successful")
-      this.router.navigate(['/'])
-    } else {
-      alertifyjs.error("Username or Password is incorrect.")
-    }
+    const { username, password } = this.loginForm.value;
+    this.authService.authUser(username, password).subscribe(
+      (response: any) => {
+        const token = response.token;
+        localStorage.setItem('token', token);
+        alertifyjs.success("Login successful");
+        this.router.navigate(['/']);
+      },
+      (error: any) => {
+        alertifyjs.error("Username or Password is incorrect.");
+      }
+    );
   }
 
   onCancel() {

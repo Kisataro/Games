@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K6gwmHcpRFrW3naQy0AoekXhNVkYL1AuaNWzwkcY8WCtv+YWuXjw9n19unpDfP0TsHVuCtXDNFPb1VfbcTmKtA==",
+  "dgSpecHash": "7Ct+UBYZazonI9qvPJDtD7TRhx+7/26svWN3iJ4xVkcIgau7KU76Wi0akyFiWeom6LsaUqOBwqf6UfWINKSBnA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\David\\angular projects\\Games\\API\\api.csproj",
+  "projectFilePath": "C:\\Users\\David\\angular projects\\Games\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\David\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

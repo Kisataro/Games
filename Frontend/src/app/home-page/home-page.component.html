@@ -1,4 +1,5 @@
-<div class="welcome-text">Welcome player! What would you like to play today?</div>
+<div class="welcome-text" *ngIf="username">Welcome {{ username }}! What would you like to play today?</div>
+<div class="welcome-text" *ngIf="!username">Welcome Player! What would you like to play today?</div>
 <div class="middle">
     <div class="game-pics">
       <a href="/rps-game" >
